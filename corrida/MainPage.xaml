@@ -6,109 +6,55 @@
 
        <Grid>
                  
-              <HorizontalStackLayout  x:Name=" satack1">
+             <HorizontalStackLayout x:Name="stack1">
                      <Image Source="fundo1.png"
-                            Aspect="AspectFillcxc"
-                            HeightRequest="790"
-                            HorizontalOptions="Fill"
-                            VerticalOptions="Fill"
-                            Opacity="100"/>
-
-                     <Image Source="fundo2.png"
-                            Aspect="AspectFill"
-                            HeightRequest="430"
-                            HorizontalOptions="Fill"
-                            VerticalOptions="End"
-                            Opacity="60"/>
-
-                     <Image Source="chao.png"
-                            HeightRequest="90"
                             Aspect="Fill"
-                            VerticalOptions="End"/>
-                                  
-              </HorizontalStackLayout>
-           
-
-
-              <HorizontalStackLayout  x:Name=" satack2">
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"/>
                      <Image Source="fundo1.png"
-                            Aspect="AspectFill"
-                            HeightRequest="790"
+                            Aspect="Fill"
                             HorizontalOptions="Fill"
-                            VerticalOptions="Fill"
-                            Opacity="100"/>
-
-                     <Image Source="fundo2.png"
-                            Aspect="AspectFill"
-                            HeightRequest="430"
-                            HorizontalOptions="Fill"
-                            VerticalOptions="End"
-                            Opacity="60"/>
-
-                     <Image Source="chao.png"
-                            HeightRequest="90"
-                            Aspect="AspectFill"
-                            VerticalOptions="End"/>
-              </HorizontalStackLayout>
-
-
-              <HorizontalStackLayout  x:Name=" satack3">
+                            VerticalOptions="Fill"/>
                      <Image Source="fundo1.png"
-                            Aspect="AspectFill"
-                            HeightRequest="790"
+                            Aspect="Fill"
                             HorizontalOptions="Fill"
-                            VerticalOptions="Fill"
-                            Opacity="100"/>
-
-                     <Image Source="fundo2.png"
-                            Aspect="AspectFill"
-                            HeightRequest="430"
-                            HorizontalOptions="Fill"
-                            VerticalOptions="End"
-                            Opacity="60"/>
-
-
-
-                     <Image Source="chao.png"
-                            HeightRequest="90"
-                            Aspect="AspectFill"
-                            VerticalOptions="End"/>
+                            VerticalOptions="Fill"/>
               </HorizontalStackLayout>
 
-
-              <HorizontalStackLayout 
-              x:Name=" satackchao">
-
-                     <Image Source="fundo1.png"
-                            Aspect="AspectFill"
-                            HeightRequest="790"
-                            HorizontalOptions="Fill"
-                            VerticalOptions="Fill"
-                            Opacity="100"/>
-
+              <HorizontalStackLayout x:Name="stack2">
                      <Image Source="fundo2.png"
-                            Aspect="AspectFill"
-                            HeightRequest="430"
-                            HorizontalOptions="Fill"
-                            VerticalOptions="End"
-                            Opacity="60"/>
-
-
-
-                     <Image Source="chao.png"
-                            HeightRequest="90"
-                            Aspect="AspectFill"
-                            VerticalOptions="End"/>
+                            Aspect="Fill"
+                            HorizontalOptions="End"
+                            VerticalOptions="Fill"/>
+                     <Image Source="fundo2.png"
+                            Aspect="Fill"
+                            HorizontalOptions="End"
+                            Margin=" 0,25,0,25"
+                             VerticalOptions="Fill"/>
+                     <Image Source="fundo2.png"
+                            Aspect="Fill"
+                            HorizontalOptions="End"
+                            VerticalOptions="Fill"/>
               </HorizontalStackLayout>
 
+              <HorizontalStackLayout x:Name="stack3">
+                     <Image Source=" chao.png"
+                            Aspect="AspectFill"
+                            HorizontalOptions="End"
+                            VerticalOptions="End"
+                            HeightRequest="80"/>
+                     <Image Source="chao.png"
+                            Aspect="AspectFill"
+                            HorizontalOptions="End"
+                            VerticalOptions="End"
+                            HeightRequest="80"/>
+                     <Image Source="chao.png"
+                            Aspect="AspectFill"
+                            HorizontalOptions="End"
+                            VerticalOptions="End"
+                            HeightRequest="300"/>
+              </HorizontalStackLayout>
 
-
-
-              <Image Source="personagem.png"
-                     HorizontalOptions="Start"
-                     HeightRequest="330"
-                     WidthRequest="200"
-                     VerticalOptions="End"/>
 
 
        </Grid>

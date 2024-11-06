@@ -39,25 +39,58 @@ public partial class MainPage : ContentPage
 
 	void CorrigeTamanhoCenario(double w, double h)
 	{
-		foreach (var a in satack1.Children)
+		foreach (var a in stack1.Children)
 			(a as Image).WidthRequest = w;
-		foreach (var a in satack2.Children)
+		foreach (var a in stack2.Children)
 			(a as Image).WidthRequest = w;
-		foreach (var a in satack3.Children)
+		foreach (var a in stack3.Children)
 			(a as Image).WidthRequest = w;
-		foreach (var a in satackchao.Children)
-			(a as Image).WidthRequest = w;
+		
 
-		satack1.WidthRequest = w * 1.5;
-		satack2.WidthRequest = w * 1.5;
-		satack3.WidthRequest = w * 1.5;
-		satackchao.WidthRequest = w * 1.5;
-
-
-
+		stack1.WidthRequest = w ;
+		stack2.WidthRequest = w ;
+		stack3.WidthRequest = w ;
 
 
 	}
+
+	void GerenciaCenarios()
+	{
+		MoveCenario();
+		GerenciaCenarios (stack1);
+		GerenciaCenarios (stack2);
+		GerenciaCenarios (stack3);
+		
+	}
+	void MoveCenario()
+	{
+		stack1.TranslationX -= velocidade1;
+		stack2.TranslationX -= velocidade2;
+		stack3.TranslationX -= velocidade3;
+	}
+	void GerenciaCenarios(HorizontalStackLayout horizontalStackLayout)
+	{
+		var view = (horizontalStackLayout.Children.First() as Image);
+		if (view.WidthRequest + horizontalStackLayout.TranslationX < 0)
+		{
+			horizontalStackLayout.Children.Remove(view);
+			horizontalStackLayout.Children.Add(view);
+			horizontalStackLayout.TranslationX = view.TranslationX;
+		}
+	}
+
+	   protected override void OnAppearing()
+    {
+		 base.OnAppearing();
+		 Desenha();
+      
+		
+			
+    }
+  public async void Desenha()
+  {
+
+  }
 
 
 
