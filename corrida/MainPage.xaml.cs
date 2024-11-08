@@ -5,6 +5,7 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
+		Player= new Player( )
 	}
 
 
@@ -87,9 +88,14 @@ public partial class MainPage : ContentPage
 		
 			
     }
-  public async void Desenha()
+   async Task Desenha()
   {
-
+        while (!estaMorto)
+		{
+			GerenciaCenarios();
+			Player.Desenha();
+			await Task.Delay (tempoEntreFrames);
+		}
   }
 
 
