@@ -5,7 +5,9 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-		Player= new Player( )
+		Player player;
+		Player= new Player( imgplayer);
+		Player.Run();
 	}
 
 
@@ -19,6 +21,7 @@ public partial class MainPage : ContentPage
 	int velocidade = 0;
 	int LarguraJanela = 0;
 	int alturaJanela = 0;
+
 
 	protected override void OnSizeAllocated(double w, double h)
 	{
