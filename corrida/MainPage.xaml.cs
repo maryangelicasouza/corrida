@@ -2,15 +2,6 @@
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
-	{
-		InitializeComponent();
-		Player player;
-		Player= new Player( imgplayer);
-		Player.Run();
-	}
-
-
 	bool estaMorto = false;
 	bool estaPulando = false;
 
@@ -21,6 +12,17 @@ public partial class MainPage : ContentPage
 	int velocidade = 0;
 	int LarguraJanela = 0;
 	int alturaJanela = 0;
+	Player player;
+	public MainPage()
+	{
+		InitializeComponent();
+
+		player = new Player(imgPlayer);
+		player.Run();
+	}
+
+
+
 
 
 	protected override void OnSizeAllocated(double w, double h)
@@ -49,11 +51,11 @@ public partial class MainPage : ContentPage
 			(a as Image).WidthRequest = w;
 		foreach (var a in stack3.Children)
 			(a as Image).WidthRequest = w;
-		
 
-		stack1.WidthRequest = w ;
-		stack2.WidthRequest = w ;
-		stack3.WidthRequest = w ;
+
+		stack1.WidthRequest = w;
+		stack2.WidthRequest = w;
+		stack3.WidthRequest = w;
 
 
 	}
@@ -61,10 +63,10 @@ public partial class MainPage : ContentPage
 	void GerenciaCenarios()
 	{
 		MoveCenario();
-		GerenciaCenarios (stack1);
-		GerenciaCenarios (stack2);
-		GerenciaCenarios (stack3);
-		
+		GerenciaCenarios(stack1);
+		GerenciaCenarios(stack2);
+		GerenciaCenarios(stack3);
+
 	}
 	void MoveCenario()
 	{
@@ -83,23 +85,27 @@ public partial class MainPage : ContentPage
 		}
 	}
 
-	   protected override void OnAppearing()
-    {
-		 base.OnAppearing();
-		 Desenha();
-      
-		
-			
-    }
-   async Task Desenha()
-  {
-        while (!estaMorto)
+
+	async Task Desenha()
+	{
+		while (!estaMorto)
 		{
 			GerenciaCenarios();
-			Player.Desenha();
-			await Task.Delay (tempoEntreFrames);
+			player.Desenha();
+			await Task.Delay(tempoEntreFrames);
 		}
-  }
+
+
+	}
+
+	protected override void OnAppearing()
+	{
+		base.OnAppearing();
+		Desenha();
+
+
+
+	}
 
 
 

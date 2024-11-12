@@ -5,8 +5,8 @@
              Shell.NavBarIsVisible="false">
 
        <Grid>
-                 
-             <HorizontalStackLayout x:Name="stack1">
+
+              <HorizontalStackLayout x:Name="stack1">
                      <Image Source="fundo1.png"
                             Aspect="Fill"
                             HorizontalOptions="Fill"
@@ -29,8 +29,7 @@
                      <Image Source="fundo2.png"
                             Aspect="Fill"
                             HorizontalOptions="End"
-                            Margin=" 0,25,0,25"
-                             VerticalOptions="Fill"/>
+                            VerticalOptions="Fill"/>
                      <Image Source="fundo2.png"
                             Aspect="Fill"
                             HorizontalOptions="End"
@@ -38,11 +37,6 @@
               </HorizontalStackLayout>
 
               <HorizontalStackLayout x:Name="stack3">
-                     <Image Source=" chao.png"
-                            Aspect="AspectFill"
-                            HorizontalOptions="End"
-                            VerticalOptions="End"
-                            HeightRequest="80"/>
                      <Image Source="chao.png"
                             Aspect="AspectFill"
                             HorizontalOptions="End"
@@ -52,13 +46,30 @@
                             Aspect="AspectFill"
                             HorizontalOptions="End"
                             VerticalOptions="End"
-                            HeightRequest="300"/>
+                            HeightRequest="80"/>
+                     <Image Source="chao.png"
+                            Aspect="AspectFill"
+                            HorizontalOptions="End"
+                            VerticalOptions="End"
+                            HeightRequest="80"/>
               </HorizontalStackLayout>
+
+
+              <Image Source="player1.png"
+                     x:Name="imgPlayer"
+                     Aspect="AspectFill"
+                     HorizontalOptions="Start"
+                     VerticalOptions="End"
+                      HeightRequest="400"
+                      WidthRequest="200 "/>
+          
+
+
 
 
 
        </Grid>
-   
-       
+
+
 
 </ContentPage>
