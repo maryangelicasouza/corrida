@@ -6,6 +6,15 @@ public partial class MainPage : ContentPage
 	bool estaPulando = false;
 
 	const int tempoEntreFrames = 25;
+	const int forcaGravidade=6;
+	bool EstaNoChao=true;
+	bool EstaNoAr=false;
+	int tempoPulando=0;
+	int tempoNoAr=0;
+	const int forcaPulo=8;
+	const int maxtempoPulando=6;
+	const int maxTempoNoar=4;
+
 	int velocidade1 = 0;
 	int velocidade2 = 0;
 	int velocidade3 = 0;
@@ -13,6 +22,7 @@ public partial class MainPage : ContentPage
 	int LarguraJanela = 0;
 	int alturaJanela = 0;
 	Player player;
+
 	public MainPage()
 	{
 		InitializeComponent();
@@ -36,9 +46,9 @@ public partial class MainPage : ContentPage
 	void CalculaVelocidade(double w)
 
 	{
-		velocidade1 = (int)(w * 0.0001);
-		velocidade2 = (int)(w * 0.0004);
-		velocidade3 = (int)(w * 0.0008);
+		velocidade1 = (int)(w * 0.001);
+		velocidade2 = (int)(w * 0.004);
+		velocidade3 = (int)(w * 0.008);
 		velocidade = (int)(w * 0.01);
 
 	}
@@ -53,9 +63,9 @@ public partial class MainPage : ContentPage
 			(a as Image).WidthRequest = w;
 
 
-		stack1.WidthRequest = w;
-		stack2.WidthRequest = w;
-		stack3.WidthRequest = w;
+		stack1.WidthRequest = w * 1.5;
+		stack2.WidthRequest = w * 1.5;
+		stack3.WidthRequest = w * 1.5;
 
 
 	}
@@ -91,8 +101,15 @@ public partial class MainPage : ContentPage
 		while (!estaMorto)
 		{
 			GerenciaCenarios();
-			player.Desenha();
 			await Task.Delay(tempoEntreFrames);
+			if (!estaPulando && !EstaNoAr)
+			{
+				Aplicagravidade();
+				player.Desenha();
+			}
+			else
+			AplicaPulo();
+			await Task.Delay( tempoEntreFrames);
 		}
 
 
@@ -104,9 +121,49 @@ public partial class MainPage : ContentPage
 		Desenha();
 
 
-
 	}
 
+	void Aplicagravidade()
+	{
+		if (player.GetY ()< 0)
+		player.MoveY ( forcaGravidade);
+		else if (player.GetY() >=0)
+		{
+			player.SetY(0);
+			EstaNoChao= true;
+		}
+	}
+void AplicaPulo()
+{
+	EstaNoChao=false;
+	if (estaPulando && tempoPulando>=maxtempoPulando)
+	{
+		estaPulando=false;
+		EstaNoAr=true;
+		tempoNoAr=0;
+
+	}
+	else if (EstaNoAr && tempoNoAr>=maxTempoNoar)
+	{
+		estaPulando=false;
+		EstaNoAr=false;
+		tempoNoAr=0;
+	}
+
+	else if (estaPulando && tempoPulando< maxtempoPulando)
+	{
+		player.MoveY (-forcaPulo);
+		tempoPulando ++;
+	}
+	else if (EstaNoAr)
+	tempoNoAr ++;
+}
+
+void OnGridTapped(object o, TappedEventArgs a)
+{
+	if ( EstaNoChao)
+	  estaPulando=true;
+}
 
 
 

@@ -57,11 +57,11 @@
 
               <Image Source="player1.png"
                      x:Name="imgPlayer"
-                     Aspect="AspectFill"
                      HorizontalOptions="Start"
                      VerticalOptions="End"
                       HeightRequest="400"
-                      WidthRequest="200 "/>
+                      WidthRequest="140 "
+                      />
           
 
 
