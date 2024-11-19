@@ -1,7 +1,16 @@
 ﻿namespace corrida;
+using FFImageLoading.Maui;
 
 public partial class MainPage : ContentPage
 {
+	public MainPage()
+	{
+		InitializeComponent();
+
+		player = new Player(imgplayer);
+		player.Run();
+	}
+
 	bool estaMorto = false;
 	bool estaPulando = false;
 
@@ -23,13 +32,7 @@ public partial class MainPage : ContentPage
 	int alturaJanela = 0;
 	Player player;
 
-	public MainPage()
-	{
-		InitializeComponent();
-
-		player = new Player(imgPlayer);
-		player.Run();
-	}
+	
 
 
 

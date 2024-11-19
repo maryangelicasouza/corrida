@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="corrida.MainPage"
+              xmlns:ff="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
              Shell.NavBarIsVisible="false">
 
        <Grid>
@@ -55,13 +56,16 @@
               </HorizontalStackLayout>
 
 
-              <Image Source="player1.png"
-                     x:Name="imgPlayer"
-                     HorizontalOptions="Start"
-                     VerticalOptions="End"
-                      HeightRequest="400"
-                      WidthRequest="140 "
-                      />
+          
+                      
+                         <ff:CachedImageView x:Name="imgplayer"
+                      CacheType="Disk"
+                      CacheDuration="365"
+                       Source="player01.png"
+                       HorizontalOptions="Start"
+                            VerticalOptions="End"
+                            HeightRequest="400"
+                            WidthRequest="140"/>
           
 
 

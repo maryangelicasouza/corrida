@@ -1,10 +1,11 @@
 using Microsoft.Maui.Platform;
+using FFImageLoading.Maui;
 
 namespace corrida;
 public delegate void Callback();
 public class Player : Animacao
 {
-    public Player(Image a) : base(a)
+    public Player ( CachedImageView a) : base(a)
     {
         for (int i = 1; i <= 6; ++i)
             animacao1.Add($"player{i.ToString("D2")}.png");
@@ -26,15 +27,15 @@ public class Player : Animacao
 
 public void MoveY( int s)
 {
-    compImage.TranslationY +=s;
+     imageView.TranslationY +=s;
 }
 public double GetY()
 {
-    return compImage.TranslationY;
+    return  imageView.TranslationY;
 }
 public void SetY (double a)
 {
-    compImage.TranslationY =a;
+     imageView.TranslationY =a;
 }
 }
 

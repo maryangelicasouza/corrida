@@ -1,4 +1,5 @@
 namespace corrida;
+using FFImageLoading.Maui;
 
 public class Animacao
 {
@@ -9,10 +10,10 @@ public class Animacao
     protected int AnimacaoAtiva = 1;
     bool parado = true;
     int frameAtual = 1;
-    protected Image compImage;
-    public Animacao(Image a)
+    protected CachedImageView imageView;
+    public Animacao(CachedImageView a)
     {
-        compImage = a;
+         imageView = a;
     }
     public void Stop()
     {
@@ -47,7 +48,7 @@ public class Animacao
             NomeArquivo = animacao3[frameAtual];
             TamanhoAnimacao = animacao3.Count;
         }
-        compImage.Source = ImageSource.FromFile(NomeArquivo);
+         imageView.Source = ImageSource.FromFile(NomeArquivo);
         frameAtual++;
         if (frameAtual >= TamanhoAnimacao)
         {
