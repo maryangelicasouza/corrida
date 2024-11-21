@@ -2,10 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="corrida.MainPage"
-              xmlns:ff="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
+             xmlns:ff="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
              Shell.NavBarIsVisible="false">
 
        <Grid>
+       <Grid.GestureRecognizers>
+       <TapGestureRecognizer Tapped="OnGridClicked"/>
+       </Grid.GestureRecognizers>
+      
 
               <HorizontalStackLayout x:Name="stack1">
                      <Image Source="fundo1.png"
@@ -56,20 +60,46 @@
               </HorizontalStackLayout>
 
 
-          
-                      
-                         <ff:CachedImageView x:Name="imgplayer"
-                      CacheType="Disk"
-                      CacheDuration="365"
-                       Source="player01.png"
-                       HorizontalOptions="Start"
+
+
+              <ff:CachedImageView x:Name="imgplayer"
+                                  CacheType="All"
+                                  CacheDuration="365"
+                                  Source="player01.png"
+                                  HorizontalOptions="Start"
+                                  VerticalOptions="End"
+                                  HeightRequest="320"
+                                  WidthRequest="195"/>
+
+              <Image
+                     Source="inimigo1.png"
+                     x:Name="inimigo1"
+                     HorizontalOptions="End"
                             VerticalOptions="End"
-                            HeightRequest="400"
-                            WidthRequest="140"/>
-          
+                            HeightRequest="290"
+                            WidthRequest="185"/>
 
-
-
+              <Image
+                     Source="inimigo2.png"
+                     x:Name="inimigo2"
+                    HorizontalOptions="End"
+                      VerticalOptions="End"
+                            HeightRequest="290"
+                            WidthRequest="180"/>
+              <Image
+                     Source="inimigo3.png"
+                     x:Name="inimigo3" 
+                      VerticalOptions="End"
+                     HorizontalOptions="End"
+                            HeightRequest="290"
+                            WidthRequest="180"/>
+              <Image
+                     Source="inimigo4.png"
+                     x:Name="inimigo4"
+                      HorizontalOptions="End"
+                      VerticalOptions="End"
+                            HeightRequest="290"
+                            WidthRequest="180"/>
 
 
        </Grid>
