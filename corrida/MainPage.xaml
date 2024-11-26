@@ -76,22 +76,22 @@
                      x:Name="inimigo1"
                      HorizontalOptions="End"
                             VerticalOptions="End"
-                            HeightRequest="290"
-                            WidthRequest="185"/>
+                            HeightRequest="250"
+                            WidthRequest="180"/>
 
               <Image
                      Source="inimigo2.png"
                      x:Name="inimigo2"
                     HorizontalOptions="End"
                       VerticalOptions="End"
-                            HeightRequest="290"
+                            HeightRequest="270"
                             WidthRequest="180"/>
               <Image
                      Source="inimigo3.png"
                      x:Name="inimigo3" 
                       VerticalOptions="End"
                      HorizontalOptions="End"
-                            HeightRequest="290"
+                            HeightRequest="270"
                             WidthRequest="180"/>
               <Image
                      Source="inimigo4.png"

@@ -22,7 +22,7 @@ public partial class MainPage : ContentPage
 	int tempoNoAr=0;
 	const int forcaPulo=16;
 	const int maxtempoPulando=12;
-	const int maxTempoNoar=10;
+	const int maxTempoNoar=27;
 
 	int velocidade1 = 0;
 	int velocidade2 = 0;
